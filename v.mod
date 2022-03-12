@@ -1,5 +1,5 @@
 Module {
-	name: 'strformat'
+	name: 'strfmt'
 	description: ''
 	version: ''
 	license: ''

@@ -1,30 +1,6 @@
-module strformat
+module strfmt
 
 import strings
-
-const (
-  bool = 0
-  int8    = 1
-  int16   = 2
-  int32   = 3
-  int64   = 4
-  uint8   = 5
-  uint16  = 6
-  uint32  = 7
-  uint64  = 8
-)
-
-union GeneralType {
-  text string
-  ni32 int
-}
-
-struct Str {
-  GeneralType
-  type_id int
-}
-
-type General = bool | i8 | i16 | int | i64 | u8 | u16 | u32 | u64 | f32 | f64 | char | string | array | map
 
 pub fn format<T>(str string, args ...T) ?string {
   if args.len == 0 || str.len == 0 {
@@ -68,7 +44,7 @@ pub fn format<T>(str string, args ...T) ?string {
       from = pos+2
     }
   } else {
-    return error("Formatting string has more formatters than arguments")
+    return error("Format string has more formatters than arguments")
   }
   
   builder.write_string(str[from..])
