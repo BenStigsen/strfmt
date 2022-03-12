@@ -1,13 +1,13 @@
 Tiny, fast, string formatting in V.
 
 ```v
-import strfmt { format }
+import strfmt { fmt }
 
 fn main() {
   a := 3
   b := 4
-  println(format("{}+{}={}", a, b, a+b) ?)
-  println(format("Hello {}!", "World") ?)
+  println(fmt("{}+{}={}", a, b, a+b) ?)
+  println(fmt("Hello {}!", "World") ?)
 }
 ```
 
