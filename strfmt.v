@@ -2,6 +2,7 @@ module strfmt
 
 import strings
 
+[direct_array_access]
 pub fn fmt<T>(str string, args ...T) ?string {
 	count := args.len
 	if count == 0 || str.len == 0 {
@@ -47,5 +48,9 @@ pub fn fmt<T>(str string, args ...T) ?string {
 	}
 
 	builder.write_string(str[from..])
-	return builder.str()
+
+	out := builder.str()
+
+	unsafe { builder.free() }
+	return out
 }
