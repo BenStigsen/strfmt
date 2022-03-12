@@ -32,12 +32,10 @@ pub fn fmt<T>(str string, args ...T) ?string {
 			builder.write_string(args[arg].str())
 			from = i + 1
 			arg += 1
-			open = false
 
 			if arg == count {
 				break
 			}
-			continue
 		}
 
 		open = false
